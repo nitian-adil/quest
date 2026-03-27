@@ -1,0 +1,132 @@
+/* MAIN CONTAINER (FIXED STRUCTURE) */
+.level1-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column; /* 🔥 IMPORTANT */
+  font-family: "Poppins", sans-serif;
+}
+
+/* MAIN CONTENT (LEFT + RIGHT) */
+.level1-main {
+  flex: 1; /* takes remaining space */
+  display: flex;
+}
+
+/* LEFT SIDE */
+.level1-left {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #fff7cc, #fde68a);
+  overflow: hidden;
+}
+
+/* LETTERS */
+.letter {
+  position: absolute;
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  background: rgba(255,255,255,0.7);
+  padding: 10px 14px;
+  border-radius: 10px;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* POSITIONS */
+.letter-0 { top: 15%; left: 20%; }
+.letter-1 { top: 30%; left: 70%; }
+.letter-2 { top: 60%; left: 40%; }
+.letter-3 { top: 20%; left: 50%; }
+.letter-4 { top: 75%; left: 25%; }
+.letter-5 { top: 50%; left: 80%; }
+.letter-6 { top: 10%; left: 80%; }
+.letter-7 { top: 65%; left: 60%; }
+.letter-8 { top: 35%; left: 10%; }
+.letter-9 { top: 80%; left: 50%; }
+.letter-10 { top: 45%; left: 30%; }
+.letter-11 { top: 70%; left: 75%; }
+
+/* RIGHT SIDE */
+.level1-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+/* CONTENT */
+.right-content {
+  width: 70%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.right-content h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.right-content p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.right-content input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.right-content button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #facc15;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ✅ PERFECT FOOTER */
+.level1-footer {
+  height: 60px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: #0f172a;
+  color: #facc15;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-top: 2px solid #facc15;
+
+  box-sizing: border-box; /* 🔥 FIX OVERFLOW */
+}
+
+.footer-left,
+.footer-right {
+  white-space: nowrap;
+}
+
+.footer-left b,
+.footer-right b {
+  color: #fff;
+}
+
+/* ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
