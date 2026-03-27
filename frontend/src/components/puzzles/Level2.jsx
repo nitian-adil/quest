@@ -3,14 +3,14 @@ import "../../level2.css";
 
 export default function Level2({ submit }) {
   const [ans, setAns] = useState("");
-  const [hintIndex, setHintIndex] = useState(0);
+  // const [hintIndex, setHintIndex] = useState(0);
   const [shake, setShake] = useState(false);
 
-  const hints = [
-    "💰 It stores money...",
-    "✈️ It travels long distances...",
-    "🐪 It survives in desert..."
-  ];
+  // const hints = [
+  //   "💰 It stores money...",
+  //   "✈️ It travels long distances...",
+  //   "🐪 It survives in desert..."
+  // ];
 
   const placeholders = [
     "Enter your answer...",

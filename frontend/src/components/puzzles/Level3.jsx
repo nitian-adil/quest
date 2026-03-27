@@ -95,7 +95,7 @@ const moveButton = () => {
     zIndex: 2,
   }}
 >
-  <img src="/images/linkdin.png" style={{ width: "45px", marginBottom: "10px" }} />
+  <img src="/images/linkdin.png" style={{ width: "45px", marginBottom: "10px" }}  alt="puzzle clue" />
   <p>Try here?</p>
 
   <input
@@ -156,7 +156,7 @@ const moveButton = () => {
           zIndex: 2,
         }}
       >
-        <img src="/images/facebook.png" style={{ width: "45px", marginBottom: "10px" }} />
+        <img src="/images/facebook.png" style={{ width: "45px", marginBottom: "10px" }} alt="puzzle clue"  />
         <p>Try here 👇 (nickname)</p>
 
         <input
@@ -204,7 +204,7 @@ const moveButton = () => {
           zIndex: 2,
         }}
       >
-        <img src="/images/insta.png" style={{ width: "70px" }} />
+        <img src="/images/insta.png" style={{ width: "70px" }} alt="puzzle clue"  />
 
         <p style={{ color: "red", fontWeight: "bold" }}>
           "Most followed, yet not the world's crown 👑"
