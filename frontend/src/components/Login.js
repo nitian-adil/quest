@@ -158,3 +158,100 @@ export default function Login() {
     </Box>
   );
 }
+const styles = {
+  page: {
+    height: "100vh",
+    position: "relative",
+    overflow: "hidden",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    background: "radial-gradient(circle at top, #111 20%, #000 80%)",
+    color: "#fff",
+  },
+
+  title: {
+    color: "#FFD700",
+    fontWeight: "bold",
+    fontSize: "42px",
+    textShadow: "0 0 10px #FFD700, 0 0 30px #ffcc00",
+  },
+
+  organizer: {
+    color: "#ffcc00",
+    marginBottom: "20px",
+    fontWeight: "bold",
+  },
+
+  card: {
+    padding: "30px",
+    width: 320,
+    borderRadius: "20px",
+    backdropFilter: "blur(20px)",
+    background: "rgba(0,0,0,0.6)",
+    border: "1px solid rgba(255,215,0,0.3)",
+    boxShadow: "0 0 30px rgba(255,215,0,0.3)",
+  },
+
+  heading: {
+    color: "#FFD700",
+    textAlign: "center",
+    marginBottom: "20px",
+    fontWeight: "bold",
+  },
+
+  input: {
+    marginBottom: "15px",
+    input: { color: "#fff" },
+    label: { color: "#aaa" },
+  },
+
+  button: {
+    width: "100%",
+    padding: "12px",
+    borderRadius: "10px",
+    fontWeight: "bold",
+    background: "linear-gradient(45deg, #FFD700, #ffcc00)",
+    color: "#000",
+    marginTop: "10px",
+  },
+
+  footer: {
+    position: "absolute",
+    bottom: "10px",
+    color: "#888",
+    fontSize: "12px",
+  },
+
+  alert: {
+    borderRadius: "10px",
+    fontWeight: "bold",
+  },
+
+  blob1: {
+    position: "absolute",
+    width: "300px",
+    height: "300px",
+    background: "#FFD700",
+    borderRadius: "50%",
+    filter: "blur(140px)",
+    top: "10%",
+    left: "10%",
+    opacity: 0.2,
+    animation: "float 6s ease-in-out infinite",
+  },
+
+  blob2: {
+    position: "absolute",
+    width: "300px",
+    height: "300px",
+    background: "#ffcc00",
+    borderRadius: "50%",
+    filter: "blur(140px)",
+    bottom: "10%",
+    right: "10%",
+    opacity: 0.2,
+    animation: "float 8s ease-in-out infinite",
+  },
+};
