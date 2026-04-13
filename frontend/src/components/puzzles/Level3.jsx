@@ -157,7 +157,7 @@ const moveButton = () => {
         }}
       >
         <img src="/images/facebook.png" style={{ width: "45px", marginBottom: "10px" }} alt="puzzle clue"  />
-        <p>Try here 👇 (nickname)</p>
+        <p>Try here 👇</p>
 
         <input
           value={realAns}

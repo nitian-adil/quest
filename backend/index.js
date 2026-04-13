@@ -52,6 +52,35 @@ app.post("/register", async (req, res) => {
   }
 });
 
+
+
+const deleteUser = async (id) => {
+  if (!window.confirm("Delete this user?")) return;
+
+  try {
+    const res = await fetch(`${API}/delete/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      throw new Error("Request failed");
+    }
+
+    // ⚠️ safer (handles empty response)
+    let data = {};
+    try {
+      data = await res.json();
+    } catch {
+      console.warn("No JSON response, but delete may still work");
+    }
+
+    setUsers((prev) => prev.filter((u) => u._id !== id));
+
+  } catch (err) {
+    console.error("Delete failed:", err);
+    alert("Failed to delete user");
+  }
+};
 // ✅ SAVE PUZZLE PROGRESS
 app.post("/save", async (req, res) => {
   try {

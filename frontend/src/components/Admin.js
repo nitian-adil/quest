@@ -16,7 +16,6 @@ export default function Admin() {
 
       const data = await res.json();
 
-      // Sort by total time (ascending)
       const sorted = data
         .filter((u) => u.timeTaken)
         .sort((a, b) => a.timeTaken - b.timeTaken);
@@ -29,10 +28,32 @@ export default function Admin() {
     }
   };
 
+  // ✅ DELETE FUNCTION
+  const deleteUser = async (id) => {
+    if (!window.confirm("Delete this user?")) return;
+
+    try {
+      console.log("API URL:", API);
+      const res = await fetch(`${API}/delete/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await res.json();
+
+      if (!data.success) throw new Error();
+
+      // Remove from UI instantly
+      setUsers((prev) => prev.filter((u) => u._id !== id));
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete user");
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
 
-    const interval = setInterval(fetchUsers, 5000); // every 5 sec (better than 3)
+    const interval = setInterval(fetchUsers, 5000);
 
     return () => clearInterval(interval);
   }, [API]);
@@ -56,23 +77,23 @@ export default function Admin() {
             borderCollapse: "collapse",
           }}
         >
-          <thead style={{ background: "#ddd" }}>
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Roll</th>
-              <th>Team</th>
-              <th>P1 (sec)</th>
-              <th>P2 (sec)</th>
-              <th>P3 (sec)</th>
-              <th>Total (sec)</th>
-            </tr>
-          </thead>
-
+        <thead style={{ background: "#ddd" }}>
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Team</th>
+    <th>P1 (sec)</th>
+    <th>P2 (sec)</th>
+    <th>P3 (sec)</th>
+    <th>Total (sec)</th>
+    <th>Action</th>
+  </tr>
+</thead>
           <tbody>
             {users.length === 0 ? (
               <tr>
-                <td colSpan="8">No participants yet.</td>
+<td colSpan="9">No participants yet.</td>
               </tr>
             ) : (
               users.map((u, i) => (
@@ -102,6 +123,23 @@ export default function Admin() {
                     {u.timeTaken
                       ? `${Math.floor(u.timeTaken)}s`
                       : "-"}
+                  </td>
+
+                  {/* ✅ DELETE BUTTON */}
+                  <td>
+                    <button
+                      onClick={() => deleteUser(u._id)}
+                      style={{
+                        background: "red",
+                        color: "white",
+                        border: "none",
+                        padding: "6px 10px",
+                        cursor: "pointer",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))
